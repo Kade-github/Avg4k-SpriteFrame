@@ -3,8 +3,8 @@ A mod framework for Average4K on manipulating text/sprites.
 
 ## TODO:
 
-- [] Sparrow Sprite Sheets (sprite)
-- [] Regular Sprite Sheets (sprite)
+- [ ] Sparrow Sprite Sheets (sprite)
+- [ ] Regular Sprite Sheets (sprite)
 
 ## Setup
 
