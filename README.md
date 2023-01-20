@@ -1,6 +1,11 @@
 # SpriteFrame
 A mod framework for Average4K on manipulating text/sprites.
 
+## TODO:
+
+- [] Sparrow Sprite Sheets (sprite)
+- [] Regular Sprite Sheets (sprite)
+
 ## Setup
 
 Make sure your file is like this 
