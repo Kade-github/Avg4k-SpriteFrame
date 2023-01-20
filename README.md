@@ -44,6 +44,8 @@ consolePrint(tostring(sprite.width) .. ', ' .. tostring(sprite.height))
 > Creating text
 
 ```lua
+-- Create a new text object named "myText", with the font "arial", with the initial text of "hello world", and the size of 24.
+-- Also position the text to 20,20
 local text = Text:new('myText','arial','hello world', 24, 20, 20)
 ```
 
