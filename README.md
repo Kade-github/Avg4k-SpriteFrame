@@ -59,4 +59,13 @@ text.text = "goodbye world"
 -- Remove the text object (only for text stuff)
 text:free()
 ```
+
+> Custom fonts
+
+You can set the current font folder to read from by using `setFontFolder`,
+
+Example:
+```lua
+-- reads fonts from mod/test/
+setFontFolder('test')
 ```
