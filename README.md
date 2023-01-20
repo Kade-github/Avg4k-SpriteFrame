@@ -60,6 +60,9 @@ consolePrint(text.font .. ', ' .. tostring(text.size))
 text.text = "goodbye world"
 -- Remove the text object (only for text stuff)
 text:free()
+
+-- It is recommended to do any text/sprite moving in the update(beat) function.
+-- as that will actually move it. lol
 ```
 
 > Custom fonts
