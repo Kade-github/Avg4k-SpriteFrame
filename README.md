@@ -69,3 +69,5 @@ Example:
 -- reads fonts from mod/test/
 setFontFolder('test')
 ```
+
+The **default** is *assets/graphical/fonts/* in the Average4K folder
