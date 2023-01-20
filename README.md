@@ -26,7 +26,8 @@ Unlike [ModFrame](https://github.com/KadeDev/Avg4k-ModFrame), SpriteFrame is cla
 > Creating a sprite
 
 ```lua
-local sprite = Sprite:new('mySprite','sprite',200,200) -- creates a sprite at 200,200 named "mySprite" with the file "sprite.png" in the mod folder
+-- creates a sprite at 200,200 named "mySprite" with the file "sprite.png" in the mod folder
+local sprite = Sprite:new('mySprite','sprite',200,200)
 ```
 
 You can then modify the sprite by setting its properties, like:
