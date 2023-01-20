@@ -54,6 +54,8 @@ consolePrint(tostring(sprite.width) .. ', ' .. tostring(sprite.height))
 local text = Text:new('myText','arial','hello world', 24, 20, 20)
 ```
 
+Avaliable fonts are located at *assets/graphical/fonts/* in the Average4K folder
+
 You can also modify it using the same type of method
 ```lua
 -- Set the text to 2,2
@@ -69,15 +71,3 @@ text:free()
 -- It is recommended to do any text/sprite moving in the update(beat) function.
 -- as that will actually move it. lol
 ```
-
-> Custom fonts
-
-You can set the current font folder to read from by using `setFontFolder`,
-
-Example:
-```lua
--- reads fonts from mod/test/
-setFontFolder('test')
-```
-
-The **default** is *assets/graphical/fonts/* in the Average4K folder
