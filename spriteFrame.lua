@@ -238,7 +238,7 @@ function SpriteFrame.update()
     for index, s in ipairs(SpriteFrame.sprites) do
         setSpriteMod(s.name, 'movex', s.x - s.rX)
         setSpriteMod(s.name, 'movey', s.y - s.rY)
-        setSpriteMod(s.name, 'stealth', math.abs(s.alpha - 1))
+        setSpriteMod(s.name, 'stealth', s.alpha)
         local animated = s.sparrow or s.spritesheet
         if animated then
             if s.playing then
