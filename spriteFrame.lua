@@ -128,6 +128,7 @@ function SpriteFrame.create()
     Sprite:set{
         width = 0,
         height = 0,
+	angle = 0,
         spritesheet = false,
         --[[
             Structure:
@@ -239,6 +240,7 @@ function SpriteFrame.update()
         setSpriteMod(s.name, 'movex', s.x - s.rX)
         setSpriteMod(s.name, 'movey', s.y - s.rY)
         setSpriteMod(s.name, 'stealth', s.alpha)
+	setSpriteMod(s.name, 'confusion', s.angle)
         local animated = s.sparrow or s.spritesheet
         if animated then
             if s.playing then
