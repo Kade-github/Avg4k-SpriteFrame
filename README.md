@@ -56,6 +56,15 @@ sprite.sheetAnims["explode"] = {0, 17}
 -- example: sprite.sheetAnims["explode2"] = {18, 35}
 -- then you would call sprite:playAnim("explode2") etc
 sprite:playAnim("explode")
+
+--[[
+
+Quick note for Sparrow Atlas Spritesheets, you don't need to do the sheetAnims thing.
+It auto detects all of them in the xml (and the way you do it is by using setSparrow(xmlFile)
+
+Then you can just use sprite:playAnim(xmlAnimationName) etc like you would normally
+
+]]--
 ```
 
 Sprite Sheet: 
