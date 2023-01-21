@@ -46,6 +46,23 @@ sprite.scale = 0.6
 consolePrint(tostring(sprite.width) .. ', ' .. tostring(sprite.height))
 ```
 
+> Animation
+
+Animation example with a horizontal sprite sheet (only one that works, except for sparrow. which is kind of the same as the defined version in the avg4k mod docs)
+
+```lua
+local sprite = Sprite:new("explosion", "explosion", 20, 20)
+sprite.loop = true
+sprite.fps = 24
+sprite:setSheet(64)
+sprite.sheetAnims["explode"] = {0, 17}
+sprite:playAnim("explode")
+```
+
+Sprite Sheet: ![explosion](https://user-images.githubusercontent.com/26305836/213835433-b1cce86e-72cb-4d9f-9373-70dc0d3885a6.png)
+
+Final Product: ![explosion example](https://user-images.githubusercontent.com/26305836/213835425-fe7eacfb-6ce7-4aaa-ac32-628b73d0d986.gif)
+
 > Creating text
 
 ```lua
