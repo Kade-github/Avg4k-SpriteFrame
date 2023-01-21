@@ -50,7 +50,11 @@ local sprite = Sprite:new("explosion", "explosion", 20, 20)
 sprite.loop = true
 sprite.fps = 24
 sprite:setSheet(64)
+-- start at frame 0, end at frame 17
 sprite.sheetAnims["explode"] = {0, 17}
+-- You can add as many as you want, just remember to set their start and end frames correctly
+-- example: sprite.sheetAnims["explode2"] = {18, 35}
+-- then you would call sprite:playAnim("explode2") etc
 sprite:playAnim("explode")
 ```
 
