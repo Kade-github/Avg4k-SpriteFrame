@@ -128,6 +128,20 @@ function SpriteFrame.create()
     Sprite:set{
         width = 0,
         height = 0,
+        spritesheet = false,
+        --[[
+            Structure:
+
+            startFrame
+            endFrame
+        ]]--
+        sheetAnims = {},
+        sparrow = false,
+        curAnim = "",
+        frame = 0,
+        loop = false,
+        fps = 0,
+        playing = false,
         scale = {
             value = 1,
             set = function(self, n, o)
@@ -184,7 +198,39 @@ function SpriteFrame.create()
         self.height = getSpriteHeight(name)
         table.insert(SpriteFrame.sprites, self)
     end
-    
+
+    function Sprite:playAnim(anim)
+        self.curAnim = anim
+        self.frame = 0
+        self.playing = true
+        if self.sparrow then
+            setSpriteProperty(self.name, "anim", anim)
+        else
+            setSpriteProperty(self.name, "anim", "anim")
+        end
+    end
+
+    function Sprite:setSparrow(xml)
+        if xml == nil then
+            self.sparrow = false
+            return
+        end
+        self.sparrow = true
+        self.spritesheet = false
+        setSpriteProperty(self.name, "sparrow", tostring(xml))
+        setSpriteProperty(self.name, "loop", tostring(self.loop))
+        setSpriteProperty(self.name, "fps", tostring(self.fps))
+    end
+
+    function Sprite:setSheet(frameWidth)
+        self.sparrow = false
+        self.spritesheet = true
+        setSpriteProperty(self.name, "sheet", tostring(frameWidth))
+        setSpriteProperty(self.name, "loop", tostring(self.loop))
+        setSpriteProperty(self.name, "fps", tostring(self.fps))
+    end
+
+
     consolePrint("SpriteFrame Loaded! Created by Kade :)")
 end
 
@@ -193,6 +239,24 @@ function SpriteFrame.update()
         setSpriteMod(s.name, 'movex', s.x - s.rX)
         setSpriteMod(s.name, 'movey', s.y - s.rY)
         
+        local animated = s.sparrow or s.spritesheet
+        if animated then
+            if s.playing then
+                s.frame = getSpriteFrame(s.name)
+            end
+            if getSpriteFinished(s.name) then
+                s.playing = false
+            end
+
+            if s.spritesheet and #s.sheetAnims > 0 then
+                local anim = s.sheetAnims[s.curAnim]
+                local s = anim[1]
+                local e = anim[2]
+
+                setSpriteProperty(s.name, "rangeMin", s)
+                setSpriteProperty(s.name, "rangeMax", e)
+            end
+        end
     end
     for index, t in ipairs(SpriteFrame.texts) do
         setTextPos(t.name, t.x, t.y)
