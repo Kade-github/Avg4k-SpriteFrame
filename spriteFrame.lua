@@ -143,13 +143,7 @@ function SpriteFrame.create()
         loop = false,
         fps = 0,
         playing = false,
-        scale = {
-            value = 1,
-            set = function(self, n, o)
-                setSpriteMod(self.name, 'mini', (1.5 - n))
-                return n
-            end
-        }
+        scale = 1
     }
 
     Text = Sprite:extend()
@@ -240,7 +234,8 @@ function SpriteFrame.update()
         setSpriteMod(s.name, 'movex', s.x - s.rX)
         setSpriteMod(s.name, 'movey', s.y - s.rY)
         setSpriteMod(s.name, 'stealth', s.alpha)
-	setSpriteMod(s.name, 'confusion', s.angle)
+	    setSpriteMod(s.name, 'confusion', s.angle)
+        setSpriteMod(s.name, 'mini', (1.5 - s.scale))
         local animated = s.sparrow or s.spritesheet
         if animated then
             if s.playing then
