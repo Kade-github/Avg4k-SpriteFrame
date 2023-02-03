@@ -232,7 +232,6 @@ end
 function SpriteFrame.update()
     for index, s in ipairs(SpriteFrame.sprites) do
         local x = s.x - s.rX
-        consolePrint(tostring(s.alpha))
         setSpriteMod(s.name, 'movex', s.x - s.rX)
         setSpriteMod(s.name, 'movey', s.y - s.rY)
         setSpriteMod(s.name, 'stealth', math.abs(1 - s.alpha))
