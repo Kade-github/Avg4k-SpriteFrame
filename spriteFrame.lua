@@ -235,7 +235,7 @@ function SpriteFrame.update()
         setSpriteMod(s.name, 'movex', s.x - s.rX)
         setSpriteMod(s.name, 'movey', s.y - s.rY)
         setSpriteMod(s.name, 'stealth', math.abs(1 - s.alpha))
-	    setSpriteMod(s.name, 'confusion', s.angle)
+	setSpriteMod(s.name, 'confusion', s.angle)
         setSpriteMod(s.name, 'mini', s.scale)
         local animated = s.sparrow or s.spritesheet
         if animated then
