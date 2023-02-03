@@ -128,7 +128,7 @@ function SpriteFrame.create()
     Sprite:set{
         width = 0,
         height = 0,
-	angle = 0,
+	    angle = 0,
         spritesheet = false,
         --[[
             Structure:
@@ -231,9 +231,11 @@ end
 
 function SpriteFrame.update()
     for index, s in ipairs(SpriteFrame.sprites) do
+        local x = s.x - s.rX
+        consolePrint(tostring(s.alpha))
         setSpriteMod(s.name, 'movex', s.x - s.rX)
         setSpriteMod(s.name, 'movey', s.y - s.rY)
-        setSpriteMod(s.name, 'stealth', s.alpha)
+        setSpriteMod(s.name, 'stealth', math.abs(1 - s.alpha))
 	    setSpriteMod(s.name, 'confusion', s.angle)
         setSpriteMod(s.name, 'mini', s.scale)
         local animated = s.sparrow or s.spritesheet
